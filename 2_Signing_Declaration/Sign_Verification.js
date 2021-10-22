@@ -8,7 +8,7 @@ var declaration = "Declared Statement for signing";
 const publicKey = fs.readFileSync('public.pem','utf-8');
 console.log(publicKey);
 const signature = fs.readFileSync('Signature','binary');
-console.log(Buffer.from(signature,'binary').toString('base64'));
+console.log(Buffer.from(signature,'binary').toString('hex'));
 
 // verifying signature with help of public key and declaration
 var is_Varified = crypto.verify("sha256",Buffer.from(declaration),
